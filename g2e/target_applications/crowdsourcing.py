@@ -45,7 +45,7 @@ CROWDSOURCING_TAGS = {
 
 
 def get_link(genes, optional_metadata, soft_file, tags):
-    print 'POSTing to Crowdsourcing if necessary'
+    print('POSTing to Crowdsourcing if necessary')
     for tag in tags:
         if tag.name.upper() in CROWDSOURCING_TAGS:
             return _post(genes, optional_metadata, soft_file, tag)
@@ -58,7 +58,7 @@ def _build_link(tag):
 
 
 def _post(genes, optional_metadata, soft_file, tag):
-    print '\tPOSTing ' + tag.name
+    print('\tPOSTing ' + tag.name)
 
     # If we submit an identical study (same GDS or GSE with the same GSMs),
     # the crowdsourcing app rejects the study. For testing purposes, we want

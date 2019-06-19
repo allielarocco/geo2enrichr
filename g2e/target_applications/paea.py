@@ -14,7 +14,7 @@ PAEA_GET_URL  = 'http://amp.pharm.mssm.edu/PAEA?id='
 def get_link(genes, description):
     """Returns a shareable link to PAEA data.
     """
-    print 'Calculating principle angle enrichment analysis'
+    print('Calculating principle angle enrichment analysis')
 
     gene_list = ''
     for rg in genes:
@@ -29,8 +29,8 @@ def get_link(genes, description):
 
     if resp.status_code == 200:
         link = PAEA_GET_URL + str(json.loads(resp.text)['userListId'])
-        print 'Link to PAEA: ' + link
+        print('Link to PAEA: ' + link)
         return link
     else:
-        print 'Error with PAEA'
+        print('Error with PAEA')
         return None
